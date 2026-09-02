@@ -1,0 +1,4 @@
+[submodule "submodules/lang_seg"]
+	path = submodules/lang_seg
+	url = https://github.com/isl-org/lang-seg.git
+	branch = main

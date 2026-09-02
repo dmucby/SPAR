@@ -1,0 +1,202 @@
+# SPAR: End-to-End CV-DRP + Joint Photometric-Semantic Reconstruction
+# Paper-aligned training and evaluation use raw CV-DRP masks.
+#   - Load the reconstruction/CV-DRP initialization, then jointly optimize CV-DRP and rendering.
+#   - Train and evaluate with raw soft CV-DRP masks.
+#   - Jointly train pose, CV-DRP, scene encoder, RGB renderer, and semantic renderer.
+#   - Mix dynamic D-RE10K scenes with copy-paste augmented static scenes.
+#
+# Usage:
+# torchrun --nproc_per_node=8 train_spar.py \
+#   -c configs/spar/spar.yaml
+
+model:
+  class_name: model.spar.SPAR
+
+  image_tokenizer:
+    image_size: 256
+    patch_size: 16
+    in_channels: 3
+
+  input_with_pe: true
+
+  target_image:
+    height: 256
+    width: 256
+    patch_size: 16
+    in_channels: 6
+
+  transformer:
+    d: 768
+    d_head: 64
+    encoder_n_layer: 12
+    encoder_geom_n_layer: 8
+    decoder_n_layer: 12
+    special_init: true
+    depth_init: true
+    use_qk_norm: true
+
+  scene_latent:
+    length: 768
+
+  pose_latent:
+    length: 1
+    canonical: middle
+    representation: '6d'
+
+  # Frozen DINOv3 ViT-B/16 backbone for CV-DRP features.
+  dino_v3:
+    checkpoint_path: ./datasets/pretrained/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+    arch: vitb16
+    embed_dim: 768
+
+  # Cross-View Dynamic Region Predictor (trainable).
+  cv_drp:
+    mask_threshold: 0.5
+    vit_n_heads: 12
+    vit_n_layers: 4
+
+  # SAM2 refinement is intentionally disabled in this release.
+  sam2:
+    enabled: false
+    config: configs/sam2/sam2.1_hiera_l.yaml
+    checkpoint: datasets/pretrained/sam2.1_hiera_large.pt
+
+  # Raw soft masks keep the CV-DRP path differentiable during training.
+  dynamic_mask_pipeline:
+    mask_source: raw
+
+  mask_ratio: 0.10
+  use_clustered_mask: true
+
+  lseg:
+    checkpoint_path: ./datasets/checkpoints/lseg/demo_e200.ckpt
+    feature_dim: 512
+    feature_loss_weight: 0.1
+
+training:
+  amp_dtype: bf16
+  wandb_mode: offline
+  freeze_cv_drp: false
+  enable_sam2_during_training: false
+  allow_train_from_scratch: false
+  api_key_path: ./configs/api_keys.yaml
+
+  batch_size_per_gpu: 8
+  beta1: 0.9
+  beta2: 0.95
+  allowed_gradnorm_factor: 2.0
+  center_crop: true
+  scene_scale_factor: 1.35
+
+  checkpoint_dir: ./experiments/checkpoints/spar
+  checkpoint_every: 2000
+
+  # Joint dataset configuration
+
+  # Primary dataset: dynamic D-RE10K scenes.
+  dataset_name: data.dataset_dre10k.DRE10KDataset
+  dre10k_root: ./datasets/Dynamic-RE10K
+  # Optional pre-extracted image root; overrides path discovery.
+  # Example: dre10k_image_root: ./datasets/Dynamic-RE10K/train_official/images
+  # Print image-source statistics when enabled.
+  dre10k_verbose: false
+  # D-RE10K view selection
+  dre10k_view_selector:
+    type: two_frame
+    min_frame_dist: 1
+    max_frame_dist: 15
+    use_curriculum: false
+
+  # Secondary dataset for copy-paste augmentation.
+  static_dataset_name: data.dataset_scene.Dataset
+  static_dataset_path: ./datasets/re10k-full_processed/train/full_list.txt
+
+  grad_accum_steps: 1
+  grad_checkpoint_every: 1
+  grad_clip_norm: 1.0
+
+  # Loss weights
+  l2_loss_weight: 1.0
+  lpips_loss_weight: 0.0
+  perceptual_loss_weight: 0.2
+  # Semantic cosine-loss weight; model.lseg.feature_loss_weight enables the branch.
+  semantic_loss_weight: 0.1
+
+  lr: 0.0002
+  train_steps: 20000
+  no_pass_steps: 100
+
+  # View sampling
+  num_views: 8
+  num_input_views: 2
+  num_target_views: 6
+  target_has_input: false
+  random_split: true
+
+  dynamic_input_view_num: true
+  dynamic_input_view_range: [2, 4]
+
+  view_selector:
+    type: two_frame
+    min_frame_dist: 1
+    max_frame_dist: 15
+    use_curriculum: false
+
+  num_threads: 8
+  num_workers: 4
+  prefetch_factor: 4
+  print_every: 20
+
+  square_crop: true
+  use_amp: true
+  use_rel_pose: false
+  use_tf32: true
+  vis_every: 1000
+
+  wandb_project: spar
+  wandb_exp_name: spar_dre10k_semantic_multiview
+  wandb_log_every: 50
+
+  warmup: 3000
+  weight_decay: 0.05
+  scheduler_type: cosine
+
+  render_video: false
+
+  # End-to-end training
+
+  # Paper-critical reconstruction/CV-DRP initialization checkpoint
+  pretrained_ckpt: ./checkpoints/spar_reconstruction_init.pt
+
+  # SPAR dynamic-region-aware loss weights (model/spar_loss.py)
+  spar_loss:
+    mask_bce_weight: 1.0              # λ_mask in the paper
+    mask_regularization_weight: 0.01   # λ_reg in the paper
+
+  # Copy-paste augmentation uses one object across all views with jitter.
+  # Enabled only for static RealEstate10K batches.
+  copy_paste:
+    enabled: true
+    prob: 0.5
+    num_objects_range: [1, 2]
+    size_ratio_range: [0.05, 0.20]
+    margin_ratio: 0.05
+    gaussian_sigma: 3
+    same_object_prob: 1.0
+    jitter_ratio: 0.05
+    object_library_path: ""
+    coco_annotation_path: "./datasets/coco/annotations/instances_train2017.json"
+    coco_image_dir: "./datasets/coco/train2017/"
+    max_objects: 5000
+
+# Inference / Evaluation
+inference:
+  if_inference: false
+  compute_metrics: false
+  view_idx_file_path: ""
+  render_video: false
+  render_video_config:
+    traj_type: interpolate
+    num_frames: 30
+    loop_video: true
+    order_poses: false

@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "If you use SPAR, please cite our ECCV 2026 paper."
+title: "SPAR: Dynamic-Robust Photometric-Semantic Reconstruction for Open-Vocabulary 3D Scene Understanding"
+type: software
+authors:
+  - family-names: Cai
+    given-names: Boyu
+  - family-names: Yang
+    given-names: Li
+  - family-names: Xu
+    given-names: Yan
+  - family-names: Liu
+    given-names: Wei
+  - family-names: Liu
+    given-names: Nian
+  - family-names: Zhang
+    given-names: Sikui
+  - family-names: Wang
+    given-names: Yan
+  - family-names: Yuan
+    given-names: Chunfeng
+  - family-names: Hu
+    given-names: Weiming
+repository-code: "https://github.com/dmucby/BY-LVSM/tree/release/eccv2026-spar"
+license: "CC-BY-NC-SA-4.0"
+preferred-citation:
+  type: conference-paper
+  title: "Dynamic-Robust Photometric-Semantic Reconstruction for Open-Vocabulary 3D Scene Understanding"
+  authors:
+    - family-names: Cai
+      given-names: Boyu
+    - family-names: Yang
+      given-names: Li
+    - family-names: Xu
+      given-names: Yan
+    - family-names: Liu
+      given-names: Wei
+    - family-names: Liu
+      given-names: Nian
+    - family-names: Zhang
+      given-names: Sikui
+    - family-names: Wang
+      given-names: Yan
+    - family-names: Yuan
+      given-names: Chunfeng
+    - family-names: Hu
+      given-names: Weiming
+  collection-title: "European Conference on Computer Vision (ECCV)"
+  year: 2026

@@ -1,0 +1,3 @@
+# Copy this file to configs/api_keys.yaml only for online logging.
+# Never commit the copied file.
+wandb: YOUR_WANDB_API_KEY
