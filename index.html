@@ -3,38 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SPAR jointly reconstructs photometric and open-vocabulary semantic scene representations from sparse, unposed, dynamic views.">
-  <meta name="theme-color" content="#f4efe5">
+  <meta name="description" content="Dynamic-robust photometric-semantic reconstruction for open-vocabulary 3D scene understanding.">
+  <meta name="theme-color" content="#ffffff">
   <meta property="og:title" content="Dynamic-Robust Photometric-Semantic Reconstruction for Open-Vocabulary 3D Scene Understanding">
-  <meta property="og:description" content="Official ECCV 2026 project page for SPAR.">
+  <meta property="og:description" content="Official ECCV 2026 project page.">
   <meta property="og:image" content="https://dmucby.github.io/SPAR/assets/teaser.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dmucby.github.io/SPAR/">
-  <title>SPAR | Dynamic-Robust Photometric-Semantic Reconstruction</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <title>Dynamic-Robust Photometric-Semantic Reconstruction</title>
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="SPAR home">SPAR<span class="mark-dot">.</span></a>
-    <nav aria-label="Primary navigation">
-      <a href="#abstract">Abstract</a>
-      <a href="#method">Method</a>
-      <a href="#results">Results</a>
-      <a href="#citation">Citation</a>
-    </nav>
-    <a class="header-code" href="https://github.com/dmucby/SPAR">GitHub <span aria-hidden="true">↗</span></a>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
-      <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
-      <div class="hero-content reveal">
-        <div class="venue"><span></span> ECCV 2026</div>
-        <p class="project-name">Semantic-Photometric-Aware Reconstruction</p>
+  <main>
+    <header class="hero">
+      <div class="container">
         <h1>Dynamic-Robust Photometric-Semantic Reconstruction for Open-Vocabulary 3D Scene Understanding</h1>
 
         <div class="authors" aria-label="Authors">
@@ -50,150 +32,432 @@
         </div>
 
         <div class="affiliations">
-          <span><sup>1</sup> ShanghaiTech University</span>
-          <span><sup>2</sup> Institute of Automation, Chinese Academy of Sciences</span>
-          <span><sup>3</sup> The Chinese University of Hong Kong</span>
-          <span><sup>4</sup> Deepeleph Intelligent Technology</span>
+          <span><sup>1</sup>ShanghaiTech University</span>
+          <span><sup>2</sup>Institute of Automation, Chinese Academy of Sciences</span>
+          <span><sup>3</sup>The Chinese University of Hong Kong</span>
+          <span><sup>4</sup>Deepeleph Intelligent Technology</span>
         </div>
         <p class="corresponding"><sup>*</sup> Corresponding author</p>
+        <p class="venue">ECCV 2026</p>
 
-        <div class="hero-links">
-          <a class="pill primary" href="https://arxiv.org/abs/2608.29177">
-            <span class="pill-icon">P</span> Paper
-          </a>
-          <a class="pill" href="https://arxiv.org/pdf/2608.29177">
-            <span class="pill-icon">PDF</span> arXiv PDF
-          </a>
-          <a class="pill" href="https://github.com/dmucby/SPAR">
-            <span class="pill-icon">&lt;/&gt;</span> Code
-          </a>
-        </div>
+        <nav class="project-links" aria-label="Project resources">
+          <a href="https://arxiv.org/abs/2608.29177">Paper</a>
+          <a href="https://arxiv.org/pdf/2608.29177">arXiv</a>
+          <a href="https://github.com/dmucby/SPAR">Code</a>
+        </nav>
       </div>
+    </header>
 
-      <figure class="hero-figure reveal reveal-delay-1">
-        <div class="figure-frame">
-          <img src="assets/teaser.png" alt="SPAR overview comparing dynamic scene reconstruction with prior methods" fetchpriority="high">
+    <section class="teaser container-wide">
+      <img src="assets/teaser.png" alt="Overview of dynamic-robust photometric-semantic reconstruction" fetchpriority="high">
+      <p class="tldr"><strong>TL;DR:</strong> We jointly reconstruct clean novel views and open-vocabulary semantics from sparse, unposed observations of dynamic scenes.</p>
+    </section>
+
+    <section class="section container" id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        The integration of novel view synthesis (NVS) and open-vocabulary segmentation (OVS) has recently yielded powerful feed-forward 3D foundation models. However, their inherent reliance on static-scene assumptions leads to severe misalignment of spatial features in unconstrained dynamic environments. To bridge this critical gap, we propose SPAR, a novel joint semantic-geometric encoding architecture that explicitly isolates transient dynamic noise prior to latent space aggregation. Furthermore, we introduce a dynamic-region-aware end-to-end training paradigm that structurally couples motion estimation with multi-view visual and semantic learning. This unified approach enables the network to inherently resolve motion conflicts and distill multi-view consistent, temporally stable scene representations from dynamic inputs.
+      </p>
+      <p>
+        Extensive experiments on the challenging D-RE10K benchmark demonstrate that SPAR achieves state-of-the-art performance. Our end-to-end approach yields a PSNR of 22.15 dB and 23.33 dB given only 3 and 4 input views, respectively. Despite being trained in a self-supervised manner, our model achieves an mIoU of 88.5% for motion mask prediction. Semantic synthesis learning also consistently enhances photometric fidelity in novel-view rendering.
+      </p>
+    </section>
+
+    <section class="section container-wide" id="videos">
+      <h2>Video Results</h2>
+      <p class="section-intro">Each scene shows synchronized novel-view image synthesis and open-vocabulary semantic segmentation along the same camera trajectory.</p>
+      <div class="demo-grid">
+      <article class="demo-card">
+        <h3>Scene 01</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 01 novel view synthesis result">
+              <source src="assets/videos/scene-01-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 01 semantic segmentation result">
+              <source src="assets/videos/scene-01-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
         </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 02</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 02 novel view synthesis result">
+              <source src="assets/videos/scene-02-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 02 semantic segmentation result">
+              <source src="assets/videos/scene-02-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 03</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 03 novel view synthesis result">
+              <source src="assets/videos/scene-03-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 03 semantic segmentation result">
+              <source src="assets/videos/scene-03-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 04</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 04 novel view synthesis result">
+              <source src="assets/videos/scene-04-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 04 semantic segmentation result">
+              <source src="assets/videos/scene-04-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 05</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 05 novel view synthesis result">
+              <source src="assets/videos/scene-05-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 05 semantic segmentation result">
+              <source src="assets/videos/scene-05-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 06</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 06 novel view synthesis result">
+              <source src="assets/videos/scene-06-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 06 semantic segmentation result">
+              <source src="assets/videos/scene-06-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 07</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 07 novel view synthesis result">
+              <source src="assets/videos/scene-07-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 07 semantic segmentation result">
+              <source src="assets/videos/scene-07-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 08</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 08 novel view synthesis result">
+              <source src="assets/videos/scene-08-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 08 semantic segmentation result">
+              <source src="assets/videos/scene-08-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 09</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 09 novel view synthesis result">
+              <source src="assets/videos/scene-09-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 09 semantic segmentation result">
+              <source src="assets/videos/scene-09-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 10</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 10 novel view synthesis result">
+              <source src="assets/videos/scene-10-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 10 semantic segmentation result">
+              <source src="assets/videos/scene-10-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 11</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 11 novel view synthesis result">
+              <source src="assets/videos/scene-11-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 11 semantic segmentation result">
+              <source src="assets/videos/scene-11-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 12</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 12 novel view synthesis result">
+              <source src="assets/videos/scene-12-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 12 semantic segmentation result">
+              <source src="assets/videos/scene-12-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 13</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 13 novel view synthesis result">
+              <source src="assets/videos/scene-13-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 13 semantic segmentation result">
+              <source src="assets/videos/scene-13-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 14</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 14 novel view synthesis result">
+              <source src="assets/videos/scene-14-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 14 semantic segmentation result">
+              <source src="assets/videos/scene-14-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 15</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 15 novel view synthesis result">
+              <source src="assets/videos/scene-15-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 15 semantic segmentation result">
+              <source src="assets/videos/scene-15-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 16</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 16 novel view synthesis result">
+              <source src="assets/videos/scene-16-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 16 semantic segmentation result">
+              <source src="assets/videos/scene-16-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 17</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 17 novel view synthesis result">
+              <source src="assets/videos/scene-17-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 17 semantic segmentation result">
+              <source src="assets/videos/scene-17-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 18</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 18 novel view synthesis result">
+              <source src="assets/videos/scene-18-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 18 semantic segmentation result">
+              <source src="assets/videos/scene-18-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 19</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 19 novel view synthesis result">
+              <source src="assets/videos/scene-19-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 19 semantic segmentation result">
+              <source src="assets/videos/scene-19-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="demo-card">
+        <h3>Scene 20</h3>
+        <div class="video-pair">
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 20 novel view synthesis result">
+              <source src="assets/videos/scene-20-rendering.mp4" type="video/mp4">
+            </video>
+            <figcaption>Novel View Synthesis</figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 20 semantic segmentation result">
+              <source src="assets/videos/scene-20-semantic.mp4" type="video/mp4">
+            </video>
+            <figcaption>Semantic Segmentation</figcaption>
+          </figure>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="section container-wide" id="method">
+      <h2>Method</h2>
+      <figure class="main-figure">
+        <img src="assets/framework.png" alt="SPAR framework for photometric-semantic reconstruction" loading="lazy">
         <figcaption>
-          <span class="caption-label">In one feed-forward pass</span>
-          SPAR suppresses transient motion before latent scene aggregation and jointly renders RGB and open-vocabulary semantic predictions.
+          SPAR couples a Cross-View Dynamic Region Predictor (CV-DRP) with joint photometric-semantic scene encoding. Dynamic regions are suppressed before static multi-view evidence is aggregated and rendered into target-view RGB images and semantic features.
         </figcaption>
       </figure>
     </section>
 
-    <section class="metric-band" aria-label="Key results">
-      <div class="metric reveal">
-        <strong>22.15<span>dB</span></strong>
-        <p>PSNR with 3 input views</p>
-      </div>
-      <div class="metric reveal reveal-delay-1">
-        <strong>23.33<span>dB</span></strong>
-        <p>PSNR with 4 input views</p>
-      </div>
-      <div class="metric reveal reveal-delay-2">
-        <strong>88.5<span>%</span></strong>
-        <p>Motion-mask mIoU</p>
-      </div>
-      <div class="metric-note reveal reveal-delay-3">
-        <span>Few-view</span>
-        <span>Unposed</span>
-        <span>Dynamic</span>
-      </div>
-    </section>
+    <section class="section container-wide" id="results">
+      <h2>Results</h2>
 
-    <section class="paper-section abstract-section" id="abstract">
-      <div class="section-heading reveal">
-        <p class="section-index">01 / Abstract</p>
-        <h2>Stable 3D understanding in a moving world.</h2>
-      </div>
-      <div class="abstract-copy reveal reveal-delay-1">
-        <p class="lead">Static-scene assumptions cause severe spatial feature misalignment when feed-forward 3D models encounter transient motion.</p>
-        <p>We propose SPAR, a joint semantic-geometric encoding architecture that explicitly isolates transient dynamic noise before latent space aggregation. A dynamic-region-aware end-to-end training paradigm structurally couples motion estimation with multi-view visual and semantic learning, enabling the network to distill temporally stable scene representations from dynamic inputs.</p>
-        <p>On D-RE10K, SPAR achieves state-of-the-art novel-view synthesis quality and strong self-supervised motion-mask prediction. The joint objective also reveals a useful inter-task synergy: semantic synthesis consistently improves photometric fidelity.</p>
-      </div>
-    </section>
-
-    <section class="paper-section method-section" id="method">
-      <div class="section-heading reveal">
-        <p class="section-index">02 / Method</p>
-        <h2>Filter motion first. Reconstruct once.</h2>
+      <h3 class="result-title">Dynamic Novel-View Synthesis on D-RE10K</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Input Views</th>
+              <th>PSNR &uarr;</th>
+              <th>SSIM &uarr;</th>
+              <th>LPIPS &darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>19.97</td><td>0.627</td><td>0.339</td></tr>
+            <tr><td>3</td><td><strong>22.15</strong></td><td>0.702</td><td><strong>0.283</strong></td></tr>
+            <tr><td>4</td><td><strong>23.33</strong></td><td>0.739</td><td><strong>0.263</strong></td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <figure class="paper-figure reveal reveal-delay-1">
-        <img src="assets/framework.png" alt="SPAR framework for dynamic-region-aware photometric and semantic reconstruction" loading="lazy">
-        <figcaption>SPAR couples a Cross-View Dynamic Region Predictor with joint photometric-semantic scene encoding and rendering.</figcaption>
+      <figure class="main-figure qualitative">
+        <img src="assets/results/dre10k_rendering.png" alt="Novel-view synthesis and semantic segmentation comparisons" loading="lazy">
+        <figcaption>Qualitative comparison of novel-view synthesis and semantic segmentation on dynamic scenes.</figcaption>
       </figure>
 
-      <div class="method-grid">
-        <article class="method-card reveal">
-          <span class="card-number">01</span>
-          <h3>Cross-view motion</h3>
-          <p>CV-DRP combines semantic, appearance, and geometric cues to identify transient foreground regions across unposed views.</p>
-        </article>
-        <article class="method-card reveal reveal-delay-1">
-          <span class="card-number">02</span>
-          <h3>Joint scene tokens</h3>
-          <p>Dynamic regions are suppressed before photometric and semantic evidence is aggregated into a compact scene representation.</p>
-        </article>
-        <article class="method-card reveal reveal-delay-2">
-          <span class="card-number">03</span>
-          <h3>Dual rendering</h3>
-          <p>A shared rendering decoder synthesizes target-view RGB images and continuous open-vocabulary semantic features.</p>
-        </article>
-      </div>
+      <figure class="main-figure qualitative">
+        <img src="assets/results/dre10k_motion_mask.png" alt="Dynamic region prediction comparisons" loading="lazy">
+        <figcaption>Dynamic region prediction on diverse multi-view sequences. The public evaluator uses the raw CV-DRP output shown as Ours w/o Refine; SAM2 refinement is disabled.</figcaption>
+      </figure>
     </section>
 
-    <section class="paper-section results-section" id="results">
-      <div class="section-heading reveal">
-        <p class="section-index">03 / Results</p>
-        <h2>Clean appearance. Consistent semantics.</h2>
-      </div>
-
-      <figure class="paper-figure result-figure reveal reveal-delay-1">
-        <div class="figure-kicker">Novel-view synthesis + semantic rendering</div>
-        <img src="assets/results/dre10k_rendering.png" alt="Qualitative comparison of novel-view synthesis and semantic segmentation on dynamic scenes" loading="lazy">
-        <figcaption>SPAR removes transient foreground interference while preserving static appearance and semantic boundaries.</figcaption>
-      </figure>
-
-      <figure class="paper-figure result-figure reveal">
-        <div class="figure-kicker">Dynamic region prediction</div>
-        <img src="assets/results/dre10k_motion_mask.png" alt="Qualitative motion-mask results across diverse multi-view sequences" loading="lazy">
-        <figcaption>The public evaluator uses the raw CV-DRP output shown as <strong>Ours w/o Refine</strong>; SAM2 refinement is disabled in the released code.</figcaption>
-      </figure>
-
-      <div class="table-wrap reveal">
-        <div class="table-intro">
-          <p class="eyebrow">D-RE10K</p>
-          <h3>Dynamic novel-view synthesis</h3>
-        </div>
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>Input views</th>
-                <th>PSNR <span>↑</span></th>
-                <th>SSIM <span>↑</span></th>
-                <th>LPIPS <span>↓</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>2</td><td>19.97</td><td>0.627</td><td>0.339</td></tr>
-              <tr><td>3</td><td class="best">22.15</td><td>0.702</td><td class="best">0.283</td></tr>
-              <tr><td>4</td><td class="best">23.33</td><td>0.739</td><td class="best">0.263</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="paper-section citation-section" id="citation">
-      <div class="section-heading reveal">
-        <p class="section-index">04 / Citation</p>
-        <h2>Build on SPAR.</h2>
-      </div>
-      <div class="citation-card reveal reveal-delay-1">
-        <button class="copy-button" type="button" data-copy-citation>Copy BibTeX</button>
-        <pre><code id="bibtex">@inproceedings{cai2026spar,
+    <section class="section container" id="bibtex">
+      <h2>BibTeX</h2>
+      <div class="bibtex">
+        <button type="button" data-copy-citation>Copy</button>
+        <pre><code>@inproceedings{cai2026spar,
   title     = {Dynamic-Robust Photometric-Semantic Reconstruction for
                Open-Vocabulary 3D Scene Understanding},
   author    = {Cai, Boyu and Yang, Li and Xu, Yan and Liu, Wei and
@@ -205,28 +469,38 @@
       </div>
     </section>
 
-    <section class="acknowledgements">
-      <p class="section-index">Acknowledgements</p>
+    <section class="section container acknowledgements">
+      <h2>Acknowledgements</h2>
       <p>This project builds upon <a href="https://github.com/Haian-Jin/LVSM">LVSM</a>, <a href="https://github.com/hwjiang1510/RayZer">RayZer</a>, and <a href="https://github.com/UVA-Computer-Vision-Lab/wild-rayzer">WildRayZer</a>. We thank their authors for releasing the code.</p>
     </section>
   </main>
 
   <footer>
-    <a class="wordmark" href="#top">SPAR<span class="mark-dot">.</span></a>
-    <p>Dynamic-robust reconstruction for open-vocabulary 3D scene understanding.</p>
-    <p class="footer-meta">ECCV 2026</p>
+    <p>This academic project page follows the clear presentation style of LVSM, RayZer, and WildRayZer.</p>
   </footer>
 
   <script>
-    const copyButton = document.querySelector('[data-copy-citation]');
+    const videos = document.querySelectorAll('video');
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { rootMargin: '160px 0px', threshold: 0.05 });
 
-    async function copyText(text) {
+    videos.forEach((video) => videoObserver.observe(video));
+
+    const copyButton = document.querySelector('[data-copy-citation]');
+    copyButton.addEventListener('click', async () => {
+      const citation = document.querySelector('#bibtex code').textContent;
       try {
-        await navigator.clipboard.writeText(text);
-        return;
+        await navigator.clipboard.writeText(citation);
       } catch (error) {
         const textarea = document.createElement('textarea');
-        textarea.value = text;
+        textarea.value = citation;
         textarea.setAttribute('readonly', '');
         textarea.style.position = 'fixed';
         textarea.style.opacity = '0';
@@ -235,13 +509,8 @@
         document.execCommand('copy');
         textarea.remove();
       }
-    }
-
-    copyButton.addEventListener('click', async () => {
-      const citation = document.querySelector('#bibtex').textContent;
-      await copyText(citation);
       copyButton.textContent = 'Copied';
-      window.setTimeout(() => { copyButton.textContent = 'Copy BibTeX'; }, 1600);
+      window.setTimeout(() => { copyButton.textContent = 'Copy'; }, 1400);
     });
   </script>
 </body>
