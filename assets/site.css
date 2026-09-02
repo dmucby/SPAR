@@ -178,20 +178,20 @@ sup {
 
 .demo-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px 30px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px 18px;
 }
 
 .demo-card {
   min-width: 0;
-  padding-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid var(--line);
 }
 
 .demo-card h3 {
-  margin-bottom: 9px;
+  margin-bottom: 7px;
   color: #444;
-  font-size: 0.86rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-align: center;
@@ -201,12 +201,12 @@ sup {
 .video-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 4px;
 }
 
 .video-pair figure {
   min-width: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .video-pair video {
@@ -217,11 +217,33 @@ sup {
 }
 
 .video-pair figcaption {
-  padding-top: 6px;
+  padding-top: 5px;
   color: var(--muted);
-  font-size: 0.75rem;
-  line-height: 1.35;
+  font-size: 0.62rem;
+  line-height: 1.3;
   text-align: center;
+}
+
+.takeaway-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.takeaway-grid article {
+  padding-top: 14px;
+  border-top: 2px solid #333;
+}
+
+.takeaway-grid h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.takeaway-grid p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .main-figure {
@@ -331,6 +353,12 @@ footer p {
   margin: 0;
 }
 
+@media (max-width: 980px) {
+  .demo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   .hero {
     padding-top: 38px;
@@ -359,8 +387,8 @@ footer p {
   }
 
   .demo-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
   }
 }
 
@@ -398,6 +426,11 @@ footer p {
 
   .video-pair figcaption {
     font-size: 0.68rem;
+  }
+
+  .demo-grid,
+  .takeaway-grid {
+    grid-template-columns: 1fr;
   }
 
   th,

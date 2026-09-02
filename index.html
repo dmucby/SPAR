@@ -20,15 +20,15 @@
         <h1>Dynamic-Robust Photometric-Semantic Reconstruction for Open-Vocabulary 3D Scene Understanding</h1>
 
         <div class="authors" aria-label="Authors">
-          <span>Boyu Cai<sup>1,2</sup></span>
-          <span>Li Yang<sup>2*</sup></span>
-          <span>Yan Xu<sup>3</sup></span>
+          <a href="https://dmucby.github.io/">Boyu Cai<sup>1,2</sup></a>
+          <a href="https://scholar.google.com/citations?user=smjlgPgAAAAJ&amp;hl=en">Li Yang<sup>2*</sup></a>
+          <a href="https://decayale.github.io/">Yan Xu<sup>3</sup></a>
           <span>Wei Liu<sup>2</sup></span>
           <span>Nian Liu<sup>2</sup></span>
           <span>Sikui Zhang<sup>2</sup></span>
           <span>Yan Wang<sup>4</sup></span>
           <span>Chunfeng Yuan<sup>2</sup></span>
-          <span>Weiming Hu<sup>1,2</sup></span>
+          <a href="http://weiminghu.people-ai.net/">Weiming Hu<sup>1,2</sup></a>
         </div>
 
         <div class="affiliations">
@@ -61,353 +61,6 @@
       <p>
         Extensive experiments on the challenging D-RE10K benchmark demonstrate that SPAR achieves state-of-the-art performance. Our end-to-end approach yields a PSNR of 22.15 dB and 23.33 dB given only 3 and 4 input views, respectively. Despite being trained in a self-supervised manner, our model achieves an mIoU of 88.5% for motion mask prediction. Semantic synthesis learning also consistently enhances photometric fidelity in novel-view rendering.
       </p>
-    </section>
-
-    <section class="section container-wide" id="videos">
-      <h2>Video Results</h2>
-      <p class="section-intro">Each scene shows synchronized novel-view image synthesis and open-vocabulary semantic segmentation along the same camera trajectory.</p>
-      <div class="demo-grid">
-      <article class="demo-card">
-        <h3>Scene 01</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 01 novel view synthesis result">
-              <source src="assets/videos/scene-01-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 01 semantic segmentation result">
-              <source src="assets/videos/scene-01-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 02</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 02 novel view synthesis result">
-              <source src="assets/videos/scene-02-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 02 semantic segmentation result">
-              <source src="assets/videos/scene-02-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 03</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 03 novel view synthesis result">
-              <source src="assets/videos/scene-03-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 03 semantic segmentation result">
-              <source src="assets/videos/scene-03-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 04</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 04 novel view synthesis result">
-              <source src="assets/videos/scene-04-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 04 semantic segmentation result">
-              <source src="assets/videos/scene-04-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 05</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 05 novel view synthesis result">
-              <source src="assets/videos/scene-05-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 05 semantic segmentation result">
-              <source src="assets/videos/scene-05-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 06</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 06 novel view synthesis result">
-              <source src="assets/videos/scene-06-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 06 semantic segmentation result">
-              <source src="assets/videos/scene-06-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 07</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 07 novel view synthesis result">
-              <source src="assets/videos/scene-07-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 07 semantic segmentation result">
-              <source src="assets/videos/scene-07-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 08</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 08 novel view synthesis result">
-              <source src="assets/videos/scene-08-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 08 semantic segmentation result">
-              <source src="assets/videos/scene-08-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 09</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 09 novel view synthesis result">
-              <source src="assets/videos/scene-09-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 09 semantic segmentation result">
-              <source src="assets/videos/scene-09-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 10</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 10 novel view synthesis result">
-              <source src="assets/videos/scene-10-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 10 semantic segmentation result">
-              <source src="assets/videos/scene-10-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 11</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 11 novel view synthesis result">
-              <source src="assets/videos/scene-11-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 11 semantic segmentation result">
-              <source src="assets/videos/scene-11-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 12</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 12 novel view synthesis result">
-              <source src="assets/videos/scene-12-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 12 semantic segmentation result">
-              <source src="assets/videos/scene-12-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 13</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 13 novel view synthesis result">
-              <source src="assets/videos/scene-13-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 13 semantic segmentation result">
-              <source src="assets/videos/scene-13-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 14</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 14 novel view synthesis result">
-              <source src="assets/videos/scene-14-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 14 semantic segmentation result">
-              <source src="assets/videos/scene-14-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 15</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 15 novel view synthesis result">
-              <source src="assets/videos/scene-15-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 15 semantic segmentation result">
-              <source src="assets/videos/scene-15-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 16</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 16 novel view synthesis result">
-              <source src="assets/videos/scene-16-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 16 semantic segmentation result">
-              <source src="assets/videos/scene-16-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 17</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 17 novel view synthesis result">
-              <source src="assets/videos/scene-17-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 17 semantic segmentation result">
-              <source src="assets/videos/scene-17-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 18</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 18 novel view synthesis result">
-              <source src="assets/videos/scene-18-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 18 semantic segmentation result">
-              <source src="assets/videos/scene-18-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 19</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 19 novel view synthesis result">
-              <source src="assets/videos/scene-19-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 19 semantic segmentation result">
-              <source src="assets/videos/scene-19-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="demo-card">
-        <h3>Scene 20</h3>
-        <div class="video-pair">
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 20 novel view synthesis result">
-              <source src="assets/videos/scene-20-rendering.mp4" type="video/mp4">
-            </video>
-            <figcaption>Novel View Synthesis</figcaption>
-          </figure>
-          <figure>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 20 semantic segmentation result">
-              <source src="assets/videos/scene-20-semantic.mp4" type="video/mp4">
-            </video>
-            <figcaption>Semantic Segmentation</figcaption>
-          </figure>
-        </div>
-      </article>
-      </div>
     </section>
 
     <section class="section container-wide" id="method">
@@ -451,6 +104,367 @@
         <img src="assets/results/dre10k_motion_mask.png" alt="Dynamic region prediction comparisons" loading="lazy">
         <figcaption>Dynamic region prediction on diverse multi-view sequences. The public evaluator uses the raw CV-DRP output shown as Ours w/o Refine; SAM2 refinement is disabled.</figcaption>
       </figure>
+    </section>
+
+    <section class="section container" id="takeaways">
+      <h2>Takeaways</h2>
+      <div class="takeaway-grid">
+        <article>
+          <h3>Semantics Helps Reconstruction</h3>
+          <p>Semantic learning supplies structural cues that improve photometric scene reconstruction and novel-view rendering.</p>
+        </article>
+        <article>
+          <h3>Reconstruction Reveals Dynamics</h3>
+          <p>Multi-view reconstruction inconsistencies expose transient content and provide self-supervision for learning dynamic masks without ground-truth motion labels.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container-wide video-section" id="videos">
+      <h2>Video Results</h2>
+      <p class="section-intro">Each scene shows synchronized novel-view image synthesis and open-vocabulary semantic segmentation along the same camera trajectory.</p>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <h3>Scene 01</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 01 novel view synthesis result">
+                <source src="assets/videos/scene-01-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 01 semantic segmentation result">
+                <source src="assets/videos/scene-01-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 02</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 02 novel view synthesis result">
+                <source src="assets/videos/scene-02-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 02 semantic segmentation result">
+                <source src="assets/videos/scene-02-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 03</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 03 novel view synthesis result">
+                <source src="assets/videos/scene-03-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 03 semantic segmentation result">
+                <source src="assets/videos/scene-03-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 04</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 04 novel view synthesis result">
+                <source src="assets/videos/scene-04-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 04 semantic segmentation result">
+                <source src="assets/videos/scene-04-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 05</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 05 novel view synthesis result">
+                <source src="assets/videos/scene-05-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 05 semantic segmentation result">
+                <source src="assets/videos/scene-05-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 06</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 06 novel view synthesis result">
+                <source src="assets/videos/scene-06-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 06 semantic segmentation result">
+                <source src="assets/videos/scene-06-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 07</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 07 novel view synthesis result">
+                <source src="assets/videos/scene-07-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 07 semantic segmentation result">
+                <source src="assets/videos/scene-07-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 08</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 08 novel view synthesis result">
+                <source src="assets/videos/scene-08-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 08 semantic segmentation result">
+                <source src="assets/videos/scene-08-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 09</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 09 novel view synthesis result">
+                <source src="assets/videos/scene-09-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 09 semantic segmentation result">
+                <source src="assets/videos/scene-09-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 10</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 10 novel view synthesis result">
+                <source src="assets/videos/scene-10-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 10 semantic segmentation result">
+                <source src="assets/videos/scene-10-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 11</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 11 novel view synthesis result">
+                <source src="assets/videos/scene-11-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 11 semantic segmentation result">
+                <source src="assets/videos/scene-11-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 12</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 12 novel view synthesis result">
+                <source src="assets/videos/scene-12-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 12 semantic segmentation result">
+                <source src="assets/videos/scene-12-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 13</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 13 novel view synthesis result">
+                <source src="assets/videos/scene-13-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 13 semantic segmentation result">
+                <source src="assets/videos/scene-13-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 14</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 14 novel view synthesis result">
+                <source src="assets/videos/scene-14-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 14 semantic segmentation result">
+                <source src="assets/videos/scene-14-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 15</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 15 novel view synthesis result">
+                <source src="assets/videos/scene-15-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 15 semantic segmentation result">
+                <source src="assets/videos/scene-15-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 16</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 16 novel view synthesis result">
+                <source src="assets/videos/scene-16-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 16 semantic segmentation result">
+                <source src="assets/videos/scene-16-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 17</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 17 novel view synthesis result">
+                <source src="assets/videos/scene-17-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 17 semantic segmentation result">
+                <source src="assets/videos/scene-17-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 18</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 18 novel view synthesis result">
+                <source src="assets/videos/scene-18-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 18 semantic segmentation result">
+                <source src="assets/videos/scene-18-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 19</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 19 novel view synthesis result">
+                <source src="assets/videos/scene-19-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 19 semantic segmentation result">
+                <source src="assets/videos/scene-19-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="demo-card">
+          <h3>Scene 20</h3>
+          <div class="video-pair">
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 20 novel view synthesis result">
+                <source src="assets/videos/scene-20-rendering.mp4" type="video/mp4">
+              </video>
+              <figcaption>Novel View Synthesis</figcaption>
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Scene 20 semantic segmentation result">
+                <source src="assets/videos/scene-20-semantic.mp4" type="video/mp4">
+              </video>
+              <figcaption>Semantic Segmentation</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="section container" id="bibtex">
