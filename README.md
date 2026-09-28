@@ -9,7 +9,7 @@ Boyu Cai<sup>1,2</sup>, Li Yang<sup>2*</sup>, Yan Xu<sup>3</sup>, Wei Liu<sup>2<
 
 **ECCV 2026**
 
-[[Project Page](https://dmucby.github.io/SPAR/)] [[Paper](https://arxiv.org/abs/2608.29177)] [[Code](https://github.com/dmucby/SPAR)]
+[[Project Page](https://dmucby.github.io/projects/SPAR/)] [[Paper](https://arxiv.org/abs/2608.29177)] [[Code](https://github.com/dmucby/SPAR)]
 
 <sup>*</sup>Corresponding author
 
